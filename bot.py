@@ -27,11 +27,11 @@ dispatcher = Dispatcher(bot)
 @dispatcher.message_handler(commands="start")
 async def start(
     message):
-    while True:
-        if (is_valid):
-            is_valid = __isvaliduser__(
+    is_valid = __isvaliduser__(
             message.from_user['username'], message.from_user['id'])
 
+    if (is_valid):        
+        while True:
             try:
                 scrape = Scraper('bitcoin')
                 scrape.scraper()
